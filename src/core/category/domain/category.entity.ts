@@ -1,6 +1,6 @@
 type CategoryProps = {
   id?: number;
-  name?: string;
+  name: string;
 }
 
 export class Category {

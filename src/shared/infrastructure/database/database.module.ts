@@ -2,6 +2,7 @@ import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { join } from 'path';
 import { CategorySchema } from 'src/core/category/infrastructure/category.schema';
+import { ProductSchema } from 'src/core/products/infrastructure/products.schema';
 
 @Module({
   imports: [
@@ -12,7 +13,7 @@ import { CategorySchema } from 'src/core/category/infrastructure/category.schema
       username: 'root',
       password: 'admin',
       database: 'products',
-      entities: [CategorySchema],
+      entities: [CategorySchema, ProductSchema],
       synchronize: false,
       migrations: [join(__dirname, 'migrations', '*.{ts,js}')],
       migrationsRun: true,

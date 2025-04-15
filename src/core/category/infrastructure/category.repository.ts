@@ -21,4 +21,9 @@ export class CategoryRepositoryImpl implements CategoryRepository {
   async delete(id: number): Promise<void> {
     await this.categoryRepository.delete(id);
   }
+  async findById(id: number): Promise<Category> {
+    const category = await this.categoryRepository.findOneBy({id})
+
+    return category!;
+  }
 }
